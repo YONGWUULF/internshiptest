@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reminder Application</title>
+</head>
+
+<body>
+  <div>
+    <label for="day">Day of the week:</label>
+    <select id="day">
+      <option value="0">Sunday</option>
+      <option value="1">Monday</option>
+      <option value="2">Tuesday</option>
+      <option value="3">Wednesday</option>
+      <option value="4">Thursday</option>
+      <option value="5">Friday</option>
+      <option value="6">Saturday</option>
+    </select>
+  </div>
+  <div>
+    <label for="time">Time:</label>
+    <input type="time" id="time">
+  </div>
+  <div>
+    <label for="activity">Activity:</label>
+    <select id="activity">
+      <option value="Wake up">Wake up</option>
+      <option value="Go to gym">Go to gym</option>
+      <option value="Breakfast">Breakfast</option>
+      <option value="Meetings">Meetings</option>
+      <option value="Lunch">Lunch</option>
+      <option value="Quick nap">Quick nap</option>
+      <option value="Go to library">Go to library</option>
+      <option value="Dinner">Dinner</option>
+      <option value="Go to sleep">Go to sleep</option>
+    </select>
+  </div>
+  <div>
+    <button onclick="setReminder()">Set Reminder</button>
+    <button onclick="closeApp()">Close</button>
+  </div>
+
+  <script>
+    const { ipcRenderer } = require('electron');
+
+    function setReminder() {
+      const
